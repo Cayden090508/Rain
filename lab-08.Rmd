@@ -11,6 +11,25 @@ library(tidyverse)
 library(tidymodels)
 ```
 
+## Warm up -  Spam or Not Spam?
+
+```{r, warning=FALSE, message=FALSE}
+library(openintro)
+glimpse(email)
+```
+
+1. What proportion of emails are spam? Calculate the proportion of spam separately for emails with and without the word “winner”.
+
+2. Fit a logistic regression of `spam` on `winner` and write down the fitted model. Use `predict(..., type = "prob")` to find the predicted probability of spam for each group. Compare them with your previously calculated proportions.  
+
+3. How about fitting a logistic regression of `spam` on `winner` and `num_char`? Calculate the confusion matrix of the fitted logistic model on this new model, and compare with the confusion matrix result of the previous model, relying on `winner` only. Explain the differences on confusion matrix.
+
+**Hint:** `augment()` adds the predicted class (`.pred_class`) to the data.
+It labels an email as spam when its predicted probability is above 0.5.
+
+---
+
+
 ```{r}
 weather <- read.csv("data/weatherAUS.csv", header = TRUE)
 ```
